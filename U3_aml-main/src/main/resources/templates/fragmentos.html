@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!--BUSCADOR-->
+
+    <div th:fragment="buscador">
+        <form method="get" action="/buscarEstudiantes">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+
+<!--FILTRO -->
+
+<div th:fragment="filtrar">
+    <form method="get" action="/filtrarEstudiantes">
+        <label for="curso">Curso</label>
+        <select name="curso" id="curso">
+            <option value="">Selecciona un Curso</option>
+            <option th:each="curso : ${cursos}" th:value="${curso}" th:text="${curso}"></option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+</div>
+
+</html>
+
